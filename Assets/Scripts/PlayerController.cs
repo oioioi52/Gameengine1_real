@@ -25,11 +25,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) moveX = 1f;
 
         // ✅ 잘못된 linearVelocity → velocity로 수정
-        rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
 
